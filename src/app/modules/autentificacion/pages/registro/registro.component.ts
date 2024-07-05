@@ -6,6 +6,10 @@ import { Usuario } from 'src/app/models/usuario';
 
 // Servicio de Autentificación
 import { AuthService } from '../../services/auth.service';
+
+// Servicio de Firestore
+import { FirestoreService } from 'src/app/modules/shared/services/firestore.service';
+
 // Servicio de rutas que otorga Angular
 import { Router } from '@angular/router';
 
@@ -33,8 +37,9 @@ export class RegistroComponent {
 
   // Referenciamos a nuestros servicios
   constructor(
-    public servicioAuth: AuthService,
-    public servicioRutas: Router
+    public servicioAuth: AuthService, // métodos de autentificación
+    public servicioFirestore: FirestoreService, // vincula UID con la colección
+    public servicioRutas: Router // método de navegación
   ){}
 
   // FUNCIÓN ASINCRONICA PARA EL REGISTRO
@@ -67,6 +72,7 @@ export class RegistroComponent {
 
     // constante "res" = resguarda una respuesta
     const res = await this.servicioAuth.registrar(credenciales.email, credenciales.password)
+
     // El método THEN nos devuelve la respuesta esperada por la promesa
     .then(res => {
       alert('Ha agregado un usuario con éxito :)');
@@ -75,14 +81,32 @@ export class RegistroComponent {
       // método NAVIGATE = permite dirigirnos a diferentes vistas
       this.servicioRutas.navigate(['/inicio']);
     })
+    
     // El método CATCH toma una falla y la vuelve un ERROR
     .catch(error => {
       alert('Hubo un problema al registrar un nuevo usuario :(');
     })
 
+    const uid = await this.servicioAuth.obtenerUid();
+
+    this.usuarios.uid = uid;
+
+    this.guardarUsuario();
+
     // Llamamos a la función limpiarInputs() para que se ejecute
     this.limpiarInputs();
 
+  }
+
+  // función para agregar un nuevo usuario
+  async guardarUsuario(){
+    this.servicioFirestore.agregarUsuario(this.usuarios, this.usuarios.uid)
+    .then(res => {
+      console.log(this.usuarios);
+    })
+    .catch(err => {
+      console.log('Error =>', err);
+    })
   }
 
   // Función para vaciar el formulario
