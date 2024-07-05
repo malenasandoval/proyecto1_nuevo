@@ -7,12 +7,14 @@ import { InicioRoutingModule } from './inicio-routing.module';
 
 // COMPONENTES LOCALES
 import { InicioComponent } from './pages/inicio/inicio.component';
+import { CardComponent } from './components/card/card.component';
 
 
 @NgModule({
   declarations: [
     // DECLARACION DE COMPONENTES LOCALES
-    InicioComponent
+    InicioComponent,
+    CardComponent
   ],
   imports: [
      // IMPORTACIÓN DE MODULOS QUE SE NECESITAN ACA EN EL MODULO
