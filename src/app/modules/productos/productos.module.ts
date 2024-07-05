@@ -11,7 +11,6 @@ import { AlimentacionComponent } from './pages/alimentacion/alimentacion.compone
 import { JugueteComponent } from './pages/juguete/juguete.component';
 import { ProductoComponent } from './pages/producto/producto.component';
 
-
 @NgModule({
   declarations: [
     // DECLARACION DE MODULOS PERTENECIENTES A ESTE MODULO

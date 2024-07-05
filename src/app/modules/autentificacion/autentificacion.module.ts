@@ -20,7 +20,6 @@ import { MatSelectModule } from '@angular/material/select';
 // COMPONENTES DE ANGULAR
 import { FormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     // DECLARACION DE MODULOS PERTENECIENTES A ESTE MODULO
@@ -41,6 +40,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
   ],
   exports: [
+    // EXPORTACION DE MODULOS Y COMPONENTES PARA UTILIZAR EN OTROS MODULOS
     RegistroComponent,
     InicioSesionComponent,
     MatIconModule,

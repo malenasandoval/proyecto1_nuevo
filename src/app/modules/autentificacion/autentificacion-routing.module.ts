@@ -10,10 +10,10 @@ import { InicioSesionComponent } from './pages/inicio-sesion/inicio-sesion.compo
 // RUTAS
 const routes: Routes = [
   {
-    path:"registro",component:RegistroComponent
+    path:"registro",component:RegistroComponent // ruta registro que carga el componente RegistroComponent cuando se navega a esta
   },
   {
-    path:"inicio-sesion",component:InicioSesionComponent
+    path:"inicio-sesion",component:InicioSesionComponent // ruta inicio-sesion que carga el componente InicioSesionComponent cuando se navega a esta
   }
 ];
 

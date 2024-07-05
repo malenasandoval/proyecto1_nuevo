@@ -1,7 +1,7 @@
 // COMPONENTES IMPORTADOS DE ANGULAR 
 import { Component } from '@angular/core';
 
-// IMPORTAMOS INTERFAZ PERRO
+// IMPORTACION DE INTERFAZ PERRO
 import { Perro } from 'src/app/models/perro';
 
 @Component({
@@ -16,26 +16,27 @@ export class CardComponent {
 
   // Constructor del componente donde inicializamos la propiedad info
   constructor(){
+    // Inicialización del array info con objetos Perro
     this.info = [
       {
         id: "",
         nombre: "Coco",
         edad: 5,
-        imagen: "https://i1.sndcdn.com/artworks-000190784980-i4qoly-t500x500.jpg",
+        imagen: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgByBT5IiAT_a2x9pUVb4VMoOrlzHH7Jrzj-HB5jzHlR4lNLMS",
         alt: "Un perro"
       },
       {
         id: "",
         nombre: "Teo",
         edad: 7,
-        imagen: "https://concepto.de/wp-content/uploads/2021/07/caballos-e1626738224231.jpg",
+        imagen: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgByBT5IiAT_a2x9pUVb4VMoOrlzHH7Jrzj-HB5jzHlR4lNLMS",
         alt: "Un perro"
       },
       {
         id: "",
         nombre: "Tom",
         edad: 10,
-        imagen: "https://eraverde.com.ar/wp-content/uploads/2018/08/carpincho_roger.jpg",
+        imagen: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgByBT5IiAT_a2x9pUVb4VMoOrlzHH7Jrzj-HB5jzHlR4lNLMS",
         alt: "Un perro"
       }
     ]

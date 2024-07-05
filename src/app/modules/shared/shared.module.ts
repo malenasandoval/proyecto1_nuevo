@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 
-// IMPORTAMOS MODULO DE RUTEO -> TODAS LAS RUTAS DEL PROYECTO
+// IMPORTACION DEL MODULO DE RUTEO -> TODAS LAS RUTAS DEL PROYECTO
 import { AppRoutingModule } from 'src/app/app-routing.module';
 
 @NgModule({
@@ -31,6 +31,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     MatMenuModule
   ],
   exports: [
+    // EXPORTACION DE MODULOS Y COMPONENTES PARA UTILIZAR EN OTROS MODULOS
     FooterComponent,
     NavbarComponent,
     MatIconModule,

@@ -4,12 +4,17 @@ import { Component } from '@angular/core';
 // IMPORTACION DE INTERFAZ UUSUARIO
 import { Usuario } from 'src/app/models/usuario';
 
+// IMPORTACION DE SERVICIO DE AUTENTIFICACION
 import { AuthService } from '../../services/auth.service';
+
+// IMPORTACION DE SERVICIO DE FIRESTORE
 import { FirestoreService } from 'src/app/modules/shared/services/firestore.service';
+
+// Servicio de rutas que da Angular
 import { Router } from '@angular/router';
 
+// IMPORTACION DE PAQUETERIA DE CRIPTACION
 import * as CryptoJS from 'crypto-js';
-
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -18,6 +23,7 @@ import * as CryptoJS from 'crypto-js';
 })
 export class InicioSesionComponent {
   hide = true;
+  
   /* ####################################### LOCAL
   // Definimos la propiedad local para que guarde la colección
 

@@ -12,16 +12,16 @@ import { IndumentariaComponent } from './pages/indumentaria/indumentaria.compone
 // RUTAS
 const routes: Routes = [
   {
-    path:"producto",component:ProductoComponent
+    path:"producto",component:ProductoComponent //ruta producto que carga el componente ProductoComponent cuando se navega a esta
   },
   {
-    path:"alimentacion",component:AlimentacionComponent
+    path:"alimentacion",component:AlimentacionComponent // ruta alimentacion que carga el componente AlimentacionComponent cuando se navega a esta
   },
   {
-    path:"juguetes",component:JugueteComponent
+    path:"juguetes",component:JugueteComponent // ruta juguetes que carga el componente JuguetesComponent cuando se navega a esta
   },
   {
-    path:"indumentaria",component:IndumentariaComponent
+    path:"indumentaria",component:IndumentariaComponent // ruta /indumentaria que carga el componente IndumentariaComponent cuando se navega a esta
   }
 ];
 

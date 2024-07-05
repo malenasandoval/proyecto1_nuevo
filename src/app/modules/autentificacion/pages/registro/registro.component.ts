@@ -4,16 +4,16 @@ import { Component } from '@angular/core';
 // IMPORTACION DE INTERFAZ UUSUARIO
 import { Usuario } from 'src/app/models/usuario';
 
-// Servicio de Autentificación
+// IMPORTACION DE SERVICIO DE AUTENTIFICACION
 import { AuthService } from '../../services/auth.service';
 
-// Servicio de Firestore
+// IMPORTACION DE SERVICIO DE FIRESTORE
 import { FirestoreService } from 'src/app/modules/shared/services/firestore.service';
 
-// Servicio de rutas que otorga Angular
+// Servicio de rutas que da Angular
 import { Router } from '@angular/router';
 
-// Importamos paquetería de criptación
+// IMPORTACION DE PAQUETERIA DE CRIPTACION
 import * as CryptoJS from 'crypto-js';
 
 @Component({
@@ -35,6 +35,7 @@ export class RegistroComponent {
     rol: '',
     password: ''
   }
+
   // CREAR UNA COLECCIÓN QUE SOLO RECIBE OBJETOS DEL TIPO USUARIOS
   coleccionUsuarios: Usuario[] = [];
 
@@ -109,10 +110,9 @@ export class RegistroComponent {
 
     // Llamamos a la función limpiarInputs() para que se ejecute
     this.limpiarInputs();
-
   }
 
-  // función para agregar un nuevo usuario
+  // fFnción para agregar un nuevo usuario
   async guardarUsuario(){
     this.servicioFirestore.agregarUsuario(this.usuarios, this.usuarios.uid)
     .then(res => {

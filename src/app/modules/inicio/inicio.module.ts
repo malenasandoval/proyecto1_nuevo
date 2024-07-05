@@ -14,21 +14,21 @@ import { CardComponent } from './components/card/card.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 
-
 @NgModule({
   declarations: [
-    // DECLARACION DE COMPONENTES LOCALES
+    // DECLARACION DE MODULOS PERTENECIENTES A ESTE MODULO
     InicioComponent,
     CardComponent
   ],
   imports: [
-     // IMPORTACIÓN DE MODULOS QUE SE NECESITAN ACA EN EL MODULO
+    // IMPORTACION DE MODULOS NECESARIOS PARA ESTE MODULO
     CommonModule,
     InicioRoutingModule,
     MatButtonModule,
     MatCardModule
   ],
   exports: [
+    // EXPORTACION DE MODULOS Y COMPONENTES PARA UTILIZAR EN OTROS MODULOS
     MatButtonModule,
     MatCardModule
   ]
