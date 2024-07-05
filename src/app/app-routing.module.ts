@@ -18,6 +18,12 @@ const routes: Routes = [
   // .then: funcion asincronica del tipo promesa
   {
     path:"",loadChildren:()=>import('./modules/inicio/inicio.module').then(m=>m.InicioModule)
+  },
+  {
+    path:"",loadChildren:()=>import('./modules/productos/productos.module').then(m=>m.ProductosModule)
+  },
+  {
+    path:"",loadChildren:()=>import('./modules/autentificacion/autentificacion.module').then(m=>m.AutentificacionModule)
   }
 ];
 

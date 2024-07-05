@@ -6,8 +6,13 @@ import { CommonModule } from '@angular/common';
 import { InicioRoutingModule } from './inicio-routing.module';
 
 // COMPONENTES LOCALES
+// VISTA - PÁGINA - INTERFAZ DEL USUARIO
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { CardComponent } from './components/card/card.component';
+
+// COMPONENTES QUE IMPORTAMOS DESDE MATERIAL
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -19,7 +24,13 @@ import { CardComponent } from './components/card/card.component';
   imports: [
      // IMPORTACIÓN DE MODULOS QUE SE NECESITAN ACA EN EL MODULO
     CommonModule,
-    InicioRoutingModule
+    InicioRoutingModule,
+    MatButtonModule,
+    MatCardModule
+  ],
+  exports: [
+    MatButtonModule,
+    MatCardModule
   ]
 })
 export class InicioModule { }

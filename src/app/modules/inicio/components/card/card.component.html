@@ -1,1 +1,29 @@
-<p>card works!</p>
+<div class="container">
+    <div class="row">
+        <h1>Inicio</h1>
+
+        <div class="col">
+            <!-- Itera sobre la lista info para mostrar cada perro -->
+            <div *ngFor="let i of info" class="contenido">
+                <!-- tarjeta de Angular Material -->
+                <mat-card class="example-card">
+                    <!-- Encabezado de la tarjeta con el nombre del animal -->
+                    <mat-card-header>
+                        <mat-card-title>{{i.nombre}}</mat-card-title>
+                    </mat-card-header>
+                    <!-- Imagen del perro con un texto -->
+                    <img mat-card-image src="{{i.imagen}}" alt="{{i.alt}}">
+                    <!-- Muestra la edad del perro -->
+                    <mat-card-content>
+                        <p>{{i.edad}}</p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <!-- Botones -->
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

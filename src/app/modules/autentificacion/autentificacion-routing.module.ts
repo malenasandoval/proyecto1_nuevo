@@ -1,7 +1,21 @@
+// MODULOS IMPORTADOS DE ANGULAR 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+// COMPONENTES LOCALES
+// IMPORTACIÓN A LAS VISTAS DEL MÓDULO AUTENTIFICACIÓN
+import { RegistroComponent } from './pages/registro/registro.component';
+import { InicioSesionComponent } from './pages/inicio-sesion/inicio-sesion.component';
+
+// RUTAS
+const routes: Routes = [
+  {
+    path:"registro",component:RegistroComponent
+  },
+  {
+    path:"inicio-sesion",component:InicioSesionComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

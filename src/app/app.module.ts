@@ -9,6 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 // IMPORTAMOS EL COMPONENTE PRINCIPAL DE APP
 import { AppComponent } from './app.component';
 
+// COMPONENTES GLOBALES
+import { SharedModule } from './modules/shared/shared.module';
+
 @NgModule({
   declarations: [
     // DECLARACION DE COMPONENTES PRINCIPAL
@@ -18,7 +21,8 @@ import { AppComponent } from './app.component';
     // IMPORTACION DE MODULOS NECESARIOS PARA ESTE
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
