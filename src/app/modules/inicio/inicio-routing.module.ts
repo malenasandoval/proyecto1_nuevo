@@ -8,10 +8,10 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 //RUTAS
 const routes: Routes = [
   {
-    path:"",component: InicioComponent // "" -> ruta vacía, que se refiere a la ruta raíz del módulo de ruteo
+    path: "",component: InicioComponent // "" -> ruta vacía, que se refiere a la ruta raíz del módulo de ruteo
   },
   {
-    path:"inicio",component:InicioComponent  // "inicio" -> ruta específica que lleva al mismo componente Inicio
+    path: "inicio",component:InicioComponent  // "inicio" -> ruta específica que lleva al mismo componente Inicio
   }
 ];
 

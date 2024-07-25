@@ -28,12 +28,13 @@
 
     <span class="example-spacer"></span>
 
-    <!-- Inicio de sesión y formulario de registro -->
+    <!-- Manejo del inicio (registro o inicio de sesion) y de cerrar sesion -->
     <div style="text-align:left">
     <button mat-icon-button [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
     <mat-menu #usuario="matMenu">
-        <button mat-menu-item routerLink="/registro">Registrarse</button>
-        <button mat-menu-item routerLink="/inicio-sesion">Iniciar sesión</button>
+        <button mat-menu-item (click)="iniciar()" *ngIf="logueado" routerLink="/registro">Registrarse</button>
+        <button mat-menu-item (click)="iniciar()" *ngIf="logueado" routerLink="/inicio-sesion">Iniciar Sesión</button>
+        <button mat-menu-item (click)="cerrarSesion()" *ngIf="deslogueado">Cerrar Sesión</button>
     </mat-menu>
     </div>
 
