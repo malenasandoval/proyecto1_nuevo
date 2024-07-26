@@ -16,6 +16,9 @@ import { Router } from '@angular/router';
 // IMPORTACION DE PAQUETERIA DE CRIPTACION
 import * as CryptoJS from 'crypto-js';
 
+// IMPORTAMOS PAQUETERIA DE SWEETALERT2 PARA ALERTAS PERSONALIZADAS
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -79,16 +82,20 @@ export class RegistroComponent {
 
     // El método THEN nos devuelve la respuesta esperada por la promesa
     .then(res => {
-      alert('Ha agregado un usuario con éxito :)');
-
-      // Accedemos al servicio de rutas -> método navigate
-      // método NAVIGATE = permite dirigirnos a diferentes vistas
-      this.servicioRutas.navigate(['/inicio']);
+      Swal.fire({
+        title: "Buen trabajo!",
+        text: "Se ha registrado con éxito!",
+        icon: "success"
+      });
     })
     
     // El método CATCH toma una falla y la vuelve un ERROR
     .catch(error => {
-      alert('Hubo un problema al registrar un nuevo usuario :(');
+      Swal.fire({
+        title: "Error!",
+        text: "Hubo un problema al registrar un nuevo usuario",
+        icon: "error"
+      });
     })
 
     const uid = await this.servicioAuth.obtenerUid();
