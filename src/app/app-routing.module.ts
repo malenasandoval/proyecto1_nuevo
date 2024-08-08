@@ -28,6 +28,9 @@ const routes: Routes = [
   },
   {
     path:"",loadChildren:()=>import('./modules/autentificacion/autentificacion.module').then(m=>m.AutentificacionModule) // ruta vacía que utiliza loadChildren para cargar de manera perezosa el módulo Autentificacion cuando se accede a la raíz de la app web
+  },
+  {
+    path:"",loadChildren:()=>import('./modules/admin/admin.module').then(m=>m.AdminModule) // ruta vacía que utiliza loadChildren para cargar de manera perezosa el módulo Admin cuando se accede a la raíz de la app web
   }
 ];
 
