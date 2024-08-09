@@ -10,15 +10,15 @@ export class CrudService {
   // Definimos coleccion para los productos de la web del tipo Producto
   private productosCollection: AngularFirestoreCollection<Producto>
 
-  constructor(private database: AngularFirestore) { 
+  constructor(private database: AngularFirestore) {
     // Referenciamos coleccion productos y sera subida como "producto" a Firebase
     this.productosCollection = database.collection('producto');
   }
 
   // CREAR PRODUCTOS
-  crearProducto(producto: Producto){
+  crearProducto(producto: Producto) {
     return new Promise(async (resolve, reject) => {
-      try{
+      try {
         // Creamos numero indentificativo para el producto en la base de datos
         const idProducto = this.database.createId();
         // Asignamos ID creadp al atributo idProducto de la interfaz Productos
@@ -28,14 +28,14 @@ export class CrudService {
 
         resolve(resultado);
 
-      }catch(error){
+      } catch (error) {
         reject(error);
       }
-    })  
+    })
   }
 
   // OBTENER PRODUCTOS
-  obtenerProducto(){
+  obtenerProducto() {
     // snapshotChanges -> toma una captura del estado de los datos
     // pipe -> funciona como una tubería que retorna el nuevo arreglo de datos
     // map -> "mapea" o recorre esa nueva información
@@ -44,15 +44,21 @@ export class CrudService {
   }
 
   // EDITAR PRODUCTOS
+  modificarProducto(idProducto: string, nuevaData: Producto){
+    // accedemos a la coleccion, buscamos por id y actualizamos informacion
+    return this.database.collection('producto').doc(idProducto).update(nuevaData);
+
+  }
+
   // ELIMINAR PRODUCTOS
-  eliminarProducto(idProducto: string){
-    return new Promise ((resolve, reject) => {
+  eliminarProducto(idProducto: string) {
+    return new Promise((resolve, reject) => {
       try {
         // accedo a la coleccion, busco su ID y lo elimino
         const respuesta = this.productosCollection.doc(idProducto).delete();
         resolve(respuesta);
-      } 
-      catch(error) {
+      }
+      catch (error) {
         reject(error);
       }
     })
